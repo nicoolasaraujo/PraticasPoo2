@@ -3,18 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package decorator;
+package poderes;
+
+import decorator.Atacar;
+import decorator.DecoradorAtaque;
 
 /**
  *
  * @author Nicolas
  */
-public class Kaioken extends DecoradorAtaque {
+public class KaiokenEasy extends DecoradorAtaque {
 
-    public Kaioken(Atacar ataque) {
+    public KaiokenEasy(Atacar ataque) {
         super(ataque);
         setAtaques("Kaioken");
-        setDanoDeAtaque(600);
+        setDanoDeAtaque(800);
     }
 
 }

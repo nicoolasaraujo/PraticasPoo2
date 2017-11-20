@@ -3,17 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package decorator;
+package poderes;
+
+import decorator.Atacar;
+import decorator.DecoradorAtaque;
 
 /**
  *
  * @author Nicolas
  */
-public class GenkiDama extends DecoradorAtaque {
+public class GenkiDamaHard extends DecoradorAtaque {
 
-    public GenkiDama(Atacar ataque) {
+    public GenkiDamaHard(Atacar ataque) {
         super(ataque);
-        setDanoDeAtaque(1000);
+        setDanoDeAtaque(900);
         setAtaques("GenkiDama");
     }
 

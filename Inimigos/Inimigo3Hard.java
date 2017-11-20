@@ -3,28 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package praticas;
+package Inimigos;
 
 import java.util.Observable;
+import Inimigos.Inimigo1;
+import praticas.Jogador;
 
 /**
  *
  * @author a
  */
-public class Inimigo3 extends Inimigo {
-
-    public Inimigo3() {
-
-    }
-
-    @Override
-    public void update(Observable o, Object arg) {
-        Jogador j = (Jogador) o;
-        System.out.println("Eu sou o inimigo 3");
-        System.out.println("Você está na posição:");
-        System.out.println("X:" + j.getPos_x());
-        System.out.println("Y:" + j.getPos_y());
-    }
+public class Inimigo3Hard extends Inimigo2 {
 
     @Override
     public void confrontar(Jogador jogador) {
@@ -32,7 +21,7 @@ public class Inimigo3 extends Inimigo {
             jogador.setVida(jogador.getVida() - 100);
             System.out.println("O inimigo 3 te atacou! -100");
         } else if (jogador.getA().getAtaques().contains("Forte")) {
-            jogador.setVida(jogador.getVida() - 30);
+            jogador.setVida(jogador.getVida() - 82);
             System.out.println("O inimigo 3 te atacou! -30");
         } else {
             System.out.println("Inimigo3: 'Você teve sorte dessa vez!!'");

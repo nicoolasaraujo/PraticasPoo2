@@ -3,11 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package praticas;
+package Inimigos;
 
+import decorator.Atacar;
 import factoryMethod.Elemento;
 import java.util.Observer;
 import java.util.Observable;
+import praticas.Jogador;
 
 /**
  *
@@ -21,6 +23,19 @@ public abstract class Inimigo implements Observer, Elemento {
         System.out.println("Inimigo ");
         System.out.println("X:" + j.getPos_x());
         System.out.println("Y:" + j.getPos_y());
+    }
+
+    @Override
+    public abstract void confrontar(Jogador jogador);
+
+    private Atacar ataque;
+
+    public Atacar getAtaque() {
+        return ataque;
+    }
+
+    public void setAtaque(Atacar ataque) {
+        this.ataque = ataque;
     }
 
 }

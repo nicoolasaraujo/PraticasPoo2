@@ -5,9 +5,12 @@
  */
 package factoryMethod;
 
+import obstaculos.PedraMedium;
+import obstaculos.BuracoMedium;
 import java.util.ArrayList;
-import praticas.Inimigo1;
-import praticas.Inimigo3;
+import Inimigos.Inimigo1;
+import Inimigos.Inimigo3;
+import Inimigos.Inimigo3Medium;
 
 /**
  *
@@ -20,15 +23,15 @@ public class Fase3 extends Fase {
         ArrayList<Elemento> fase1 = new ArrayList<Elemento>();
         int count = 0;
         while (count < 4) {
-            fase1.add(new Pedra());
+            fase1.add(new PedraMedium());
             count++;
         }
         while (count < 6) {
-            fase1.add(new Buraco());
+            fase1.add(new BuracoMedium());
             count++;
         }
         while (count < 9) {
-            fase1.add(new Inimigo3());
+            fase1.add(new Inimigo3Medium());
             count++;
 
         }

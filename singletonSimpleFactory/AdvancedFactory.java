@@ -5,7 +5,13 @@
  */
 package singletonSimpleFactory;
 
+import poderes.GenkiDamaMedium;
+import poderes.KaiokenMedium;
+import poderes.KamehamehaMedium;
+import poderes.SuperSaiyajin1Medium;
+import poderes.SuperSaiyajin2Medium;
 import decorator.*;
+import poderes.KamehamehaMedium;
 import praticas.*;
 
 /**
@@ -31,26 +37,26 @@ public class AdvancedFactory {
         if (getJ() == null) {
             if (n <= 0.2) {
                 j = new Jogador1();
-                j.setA(new Kamehameha(j.getA()));
-                j.setA(new Kaioken(j.getA()));
-                j.setA(new SuperSaiyajin1(j.getA()));
+                j.setA(new KamehamehaMedium(j.getA()));
+                j.setA(new KaiokenMedium(j.getA()));
+                j.setA(new SuperSaiyajin1Medium(j.getA()));
             } else if (0.2 < n && n <= 0.4) {
                 j = new Jogador2();
-                j.setA(new GenkiDama(j.getA()));
-                j.setA(new Kaioken(j.getA()));
+                j.setA(new GenkiDamaMedium(j.getA()));
+                j.setA(new KaiokenMedium(j.getA()));
             } else if (0.4 < n && n <= 0.6) {
                 j = new Jogador3();
-                j.setA(new Kaioken(j.getA()));
+                j.setA(new KaiokenMedium(j.getA()));
 
             } else if (0.6 < n && n <= 0.8) {
                 j = new Jogador4();
-                j.setA(new SuperSaiyajin1(j.getA()));
+                j.setA(new SuperSaiyajin1Medium(j.getA()));
 
             } else if (0.8 < n && n <= 1.0) {
                 j = new Jogador5();
-                j.setA(new SuperSaiyajin2(j.getA()));
-                j.setA(new Kaioken(j.getA()));
-                j.setA(new GenkiDama(j.getA()));
+                j.setA(new SuperSaiyajin2Medium(j.getA()));
+                j.setA(new KaiokenMedium(j.getA()));
+                j.setA(new GenkiDamaMedium(j.getA()));
             }
         }
 

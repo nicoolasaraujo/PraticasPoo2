@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package factoryMethod;
+package obstaculos;
 
+import factoryMethod.Obstaculo;
 import praticas.Jogador;
 
 /**
  *
  * @author Nicolas
  */
-public class Pedra extends Obstaculo {
+public class PedraHard extends Obstaculo {
 
     @Override
     public void confrontar(Jogador jogador) {

@@ -3,17 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package decorator;
+package poderes;
+
+import decorator.Atacar;
+import decorator.DecoradorAtaque;
 
 /**
  *
  * @author Nicolas
  */
-public class SuperSaiyajin2 extends DecoradorAtaque {
+public class SuperSaiyajin2Hard extends DecoradorAtaque {
 
-    public SuperSaiyajin2(Atacar ataque) {
+    public SuperSaiyajin2Hard(Atacar ataque) {
         super(ataque);
-        setDanoDeAtaque(1200);
+        setDanoDeAtaque(1800);
         setAtaques("Super Saiyajin 2");
     }
 
