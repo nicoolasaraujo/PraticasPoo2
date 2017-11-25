@@ -6,7 +6,6 @@
 package Inimigos;
 
 import java.util.Observable;
-import Inimigos.Inimigo1;
 import praticas.Jogador;
 
 /**

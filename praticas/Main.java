@@ -11,6 +11,8 @@ import AbstractFactory.Nivel;
 import Inimigos.Inimigo;
 import Inimigos.Inimigo1;
 import Inimigos.Inimigo1Easy;
+import decorator.Fire_Attack;
+import decorator.Wind_Attack;
 import singletonSimpleFactory.SimplePersonFactory;
 import singletonSimpleFactory.AdvancedFactory;
 import poderes.SuperSaiyajin2Medium;
@@ -22,6 +24,7 @@ import poderes.KaiokenEasy;
 import poderes.KaiokenHard;
 import poderes.KaiokenMedium;
 import poderes.KamehamehaMedium;
+import shields.TShields;
 
 /**
  *
@@ -77,6 +80,23 @@ public class Main {
  /*Jogador2 j1 = new Jogador2();
         j1.setA(new KaiokenHard(j1.getA()));
         System.out.println("Dano: " + j1.getA().getAtaques() + "\t" + j1.getA().getDanoDeAtaque());*/
+//        Jogador j1 = new Jogador1();
+//        j1.setShield(new TShields("First_shield"));
+//        j1.getShield().setNext(new TShields("Second_shield"));
+//        System.out.println(j1.getShield().getTypeShield());
+//        j1.getShield().checkShield("Second_Attack");
+        Inimigo enemy = new Inimigo1Easy();
+        System.out.println(enemy.getAtaque().getAtaques() + " " + enemy.getAtaque().getDanoDeAtaque());
+        enemy.setAtaque(new Fire_Attack(enemy.getAtaque()));
+        System.out.println(enemy.getAtaque().getAtaques() + " " + enemy.getAtaque().getDanoDeAtaque());
+
+        Jogador j1 = new Jogador1();
+        j1.setShield(new TShields("Wind_shield"));
+        j1.getShield().setNext(new TShields("Fire_shield"));
+        System.out.println(j1.getShield().getTypeShield());
+        enemy.confrontar(j1);
+        j1.getShield().checkShield(enemy.getAtaque().getAtaques());
+
     }
 
 }

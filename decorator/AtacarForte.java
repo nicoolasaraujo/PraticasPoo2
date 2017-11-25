@@ -13,7 +13,7 @@ public class AtacarForte extends Atacar {
 
     public AtacarForte() {
         setAtaques("Ataque Forte");
-        setDanoDeAtaque(80);
+        setDanoDeAtaque(45);
     }
 
     @Override

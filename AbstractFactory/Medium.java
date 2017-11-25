@@ -19,6 +19,21 @@ import poderes.GenkiDamaMedium;
  */
 public class Medium extends Nivel {
 
+    private static Medium instancia = null;
+    
+    private Medium()
+    {
+        
+    }
+    public static synchronized Nivel getInstancia() {
+        if (instancia == null) {
+            instancia =new Medium();
+        }
+        return instancia;
+    }
+    
+    
+    
     @Override
     public Inimigo CreateEnemy() {
         return new Inimigo1Medium();

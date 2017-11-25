@@ -18,7 +18,20 @@ import poderes.GenkiDamaEasy;
  * @author Nicolas
  */
 public class Easy extends Nivel {
-
+    
+    private static Nivel instancia = null;
+    
+    private Easy()
+    {
+        
+    }
+    public static synchronized Nivel getInstancia() {
+        if (instancia == null) {
+            instancia =new Easy();
+        }
+        return instancia;
+    }
+    
     @Override
     public Inimigo CreateEnemy() {
         return new Inimigo1Easy();

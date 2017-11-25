@@ -18,7 +18,6 @@ public class Jogador1 extends Jogador {
         setA(new AtacarForte());
         setC(new CorrerMedio());
         setP(new PuloMedio());
-        setVida(300);
 
     }
 

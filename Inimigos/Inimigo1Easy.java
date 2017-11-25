@@ -27,11 +27,20 @@ public class Inimigo1Easy extends Inimigo1 {
     @Override
     public void confrontar(Jogador jogador) {
 
-        if (jogador.getC().correr().contains("Devagar")) {
-            jogador.setVida(jogador.getVida() - 10);
-            System.out.println("O inimigo 1 te atacou!");
+        if (!(jogador.getShield().checkShield(this.getAtaque().getAtaques()))) {
+            System.out.println("Vida: " + jogador.getVida());
+            System.out.println("Voce nn pode se defender!!");
+            jogador.setVida(jogador.getVida() - this.getAtaque().getDanoDeAtaque());
+            System.out.println("Vida: " + jogador.getVida());
+
+        } else {
+            System.out.println("Ohhhh! Não, você possui o " + jogador.getShield().getTypeShield());
         }
 
+//        if (jogador.getC().correr().contains("Devagar")) {
+//            jogador.setVida(jogador.getVida() - 10);
+//            System.out.println("O inimigo 1 te atacou!");
+//        }
     }
 
 }

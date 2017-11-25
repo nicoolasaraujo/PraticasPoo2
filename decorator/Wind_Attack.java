@@ -5,26 +5,30 @@
  */
 package decorator;
 
+import decorator.Atacar;
+import decorator.Atacar;
+import decorator.DecoradorAtaque;
+import decorator.DecoradorAtaque;
+
 /**
  *
- * @author a
+ * @author Nicolas
  */
-public class AtacarMedio extends Atacar {
+public class Wind_Attack extends DecoradorAtaque {
 
-    public AtacarMedio() {
-        super.setAtaques("Ataque Medio");
-        super.setDanoDeAtaque(30);
+    public Wind_Attack(Atacar ataque) {
+        super(ataque);
 
     }
 
     @Override
     public int getDanoDeAtaque() {
-        return this.danoDeAtaque;
+        return getAtaqueBuffado().danoDeAtaque * 2;
     }
 
     @Override
     public String getAtaques() {
-        return this.ataques;
+        return "Wind_Attack";
     }
 
 }

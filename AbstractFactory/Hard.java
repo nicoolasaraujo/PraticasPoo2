@@ -12,16 +12,31 @@ import Inimigos.Inimigo;
 import decorator.Atacar;
 import obstaculos.BuracoHard;
 import poderes.GenkiDamaHard;
+import singletonSimpleFactory.NivelFactory;
 
 /**
  *
  * @author Nicolas
  */
 public class Hard extends Nivel {
+    
+    
+    private static Hard instancia = null;
+    
+    private Hard()
+    {
+        
+    }
+    public static synchronized Nivel getInstancia() {
+        if (instancia == null) {
+            instancia =new Hard();
+        }
+        return instancia;
+    }
 
     @Override
     public Inimigo CreateEnemy() {
-        return new Inimigo1Hard();
+        return  NivelFactory.createInimigo(3) ;
     }
 
     @Override

@@ -5,6 +5,7 @@
  */
 package factoryMethod;
 
+import AbstractFactory.Nivel;
 import obstaculos.PedraMedium;
 import obstaculos.BuracoMedium;
 import Inimigos.Inimigo1Easy;
@@ -18,7 +19,7 @@ import praticas.*;
 public class Fase1 extends Fase {
 
     @Override
-    public ArrayList<Elemento> factoryMethod() {
+    public ArrayList<Elemento> factoryMethod(Nivel n) {
         ArrayList<Elemento> fase1 = new ArrayList<Elemento>();
         int count = 0;
         while (count < 4) {
@@ -30,7 +31,7 @@ public class Fase1 extends Fase {
             count++;
         }
         while (count < 9) {
-            fase1.add(new Inimigo1Easy());
+            fase1.add(n.CreateEnemy());
             count++;
         }
         return fase1;

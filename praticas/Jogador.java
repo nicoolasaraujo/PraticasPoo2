@@ -7,6 +7,7 @@ package praticas;
 
 import decorator.Atacar;
 import java.util.Observable;
+import shields.Shield;
 
 /**
  *
@@ -19,6 +20,19 @@ public class Jogador extends Observable {
     private Correr c;
     private Atacar a;
     private int vida;
+    private Shield shield;
+
+    public Jogador() {
+        setVida(100);
+    }
+
+    public Shield getShield() {
+        return shield;
+    }
+
+    public void setShield(Shield shield) {
+        this.shield = shield;
+    }
 
     public String getNome() {
         return nome;
