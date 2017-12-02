@@ -12,12 +12,12 @@ import decorator.DecoradorAtaque;
  *
  * @author Nicolas
  */
-public class GenkiDamaHard extends DecoradorAtaque {
+public class Kamehameha extends DecoradorAtaque {
 
-    public GenkiDamaHard(Atacar ataque) {
+    public Kamehameha(Atacar ataque) {
         super(ataque);
-        setDanoDeAtaque(900);
-        setAtaques("GenkiDama");
+        setDanoDeAtaque(800);
+        setAtaques("Kamehameha");
     }
 
 }

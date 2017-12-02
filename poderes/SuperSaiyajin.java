@@ -12,12 +12,12 @@ import decorator.DecoradorAtaque;
  *
  * @author Nicolas
  */
-public class GenkiDamaMedium extends DecoradorAtaque {
+public class SuperSaiyajin extends DecoradorAtaque {
 
-    public GenkiDamaMedium(Atacar ataque) {
+    public SuperSaiyajin(Atacar ataque) {
         super(ataque);
-        setDanoDeAtaque(1000);
-        setAtaques("GenkiDama");
+        setDanoDeAtaque(900);
+        setAtaques("Super Saiyajin 1");
     }
 
 }

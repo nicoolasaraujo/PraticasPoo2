@@ -11,40 +11,42 @@ import factoryMethod.Obstaculo;
 import Inimigos.Inimigo;
 import decorator.Atacar;
 import obstaculos.BuracoEasy;
-import poderes.GenkiDamaEasy;
+import singletonSimpleFactory.EnemyFactory;
+import singletonSimpleFactory.HurdleFactory;
+import singletonSimpleFactory.SkillFactory;
 
 /**
  *
  * @author Nicolas
  */
 public class Easy extends Nivel {
-    
+
     private static Nivel instancia = null;
-    
-    private Easy()
-    {
-        
+
+    private Easy() {
+
     }
+
     public static synchronized Nivel getInstancia() {
         if (instancia == null) {
-            instancia =new Easy();
+            instancia = new Easy();
         }
         return instancia;
     }
-    
+
     @Override
     public Inimigo CreateEnemy() {
-        return new Inimigo1Easy();
+        return EnemyFactory.createInimigoEasy();
     }
 
     @Override
     public DecoradorAtaque CreateSkill(Atacar ataque) {
-        return new GenkiDamaEasy(ataque);
+        return SkillFactory.createSkillEasy(ataque);
     }
 
     @Override
     public Obstaculo CreateHurdle() {
-        return new BuracoEasy();
+        return HurdleFactory.createHurdleEasy();
     }
 
 }

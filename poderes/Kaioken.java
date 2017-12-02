@@ -12,12 +12,12 @@ import decorator.DecoradorAtaque;
  *
  * @author Nicolas
  */
-public class SuperSaiyajin2Hard extends DecoradorAtaque {
+public class Kaioken extends DecoradorAtaque {
 
-    public SuperSaiyajin2Hard(Atacar ataque) {
+    public Kaioken(Atacar ataque) {
         super(ataque);
-        setDanoDeAtaque(1800);
-        setAtaques("Super Saiyajin 2");
+        setAtaques("Kaioken");
+        setDanoDeAtaque(600);
     }
 
 }

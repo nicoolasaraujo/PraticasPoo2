@@ -11,7 +11,10 @@ import factoryMethod.Obstaculo;
 import Inimigos.Inimigo;
 import decorator.Atacar;
 import obstaculos.BuracoMedium;
-import poderes.GenkiDamaMedium;
+import poderes.GenkiDama;
+import singletonSimpleFactory.EnemyFactory;
+import singletonSimpleFactory.HurdleFactory;
+import singletonSimpleFactory.SkillFactory;
 
 /**
  *
@@ -20,33 +23,31 @@ import poderes.GenkiDamaMedium;
 public class Medium extends Nivel {
 
     private static Medium instancia = null;
-    
-    private Medium()
-    {
-        
+
+    private Medium() {
+
     }
+
     public static synchronized Nivel getInstancia() {
         if (instancia == null) {
-            instancia =new Medium();
+            instancia = new Medium();
         }
         return instancia;
     }
-    
-    
-    
+
     @Override
     public Inimigo CreateEnemy() {
-        return new Inimigo1Medium();
+        return EnemyFactory.createInimigoMedium();
     }
 
     @Override
     public DecoradorAtaque CreateSkill(Atacar ataque) {
-        return new GenkiDamaMedium(ataque);
+        return SkillFactory.createSkillHard(ataque);
     }
 
     @Override
     public Obstaculo CreateHurdle() {
-        return new BuracoMedium();
+        return HurdleFactory.createHurdleMedium();
     }
 
 }

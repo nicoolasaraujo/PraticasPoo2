@@ -12,9 +12,9 @@ import decorator.DecoradorAtaque;
  *
  * @author Nicolas
  */
-public class SuperSaiyajin2Medium extends DecoradorAtaque {
+public class SuperSaiyajin2 extends DecoradorAtaque {
 
-    public SuperSaiyajin2Medium(Atacar ataque) {
+    public SuperSaiyajin2(Atacar ataque) {
         super(ataque);
         setDanoDeAtaque(1500);
         setAtaques("Super Saiyajin 2");

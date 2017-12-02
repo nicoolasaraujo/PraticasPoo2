@@ -14,19 +14,27 @@ public abstract class Shield {
     private Shield next = null;
 
     private String typeShield = null;
-    
+
     public Shield(String typeShield) {
         this.typeShield = typeShield;
 
     }
 
-    public String getTypeShield() {
+    public String getTypeShield() {//Retorna somente o primeiro escudo da cadeia
+
+        return this.typeShield;
+    }
+
+    public String getAllTypeShield() {//Retorna todos os tipos de escudo da cadeia
         if (getNext() != null) {
             while (getNext() != null) {
                 return this.typeShield + " " + next.typeShield;
             }
+
         }
+
         return this.typeShield;
+
     }
 
     public void setTypeShield(String typeShield) {
@@ -35,13 +43,13 @@ public abstract class Shield {
 
     public void setNext(Shield next) {
 
-        if (this.next == null) {
+//        if (this.next == null) {
 //            System.out.println("here");
-            this.next = next;
-        } else {
-            System.out.println("Not here");
-            this.next.setNext(next);
-        }
+        this.next = next;
+//        } else {
+//            System.out.println("Not here");
+//            this.next.setNext(next);
+//        }
 
     }
 
@@ -52,9 +60,3 @@ public abstract class Shield {
     public abstract boolean checkShield(String attack);
 
 }
-
-
-
-
-
-    

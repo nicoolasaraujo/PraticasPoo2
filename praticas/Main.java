@@ -15,15 +15,12 @@ import decorator.Fire_Attack;
 import decorator.Wind_Attack;
 import singletonSimpleFactory.SimplePersonFactory;
 import singletonSimpleFactory.AdvancedFactory;
-import poderes.SuperSaiyajin2Medium;
+import poderes.SuperSaiyajin2;
 import factoryMethod.*;
-import poderes.GenkiDamaEasy;
-import poderes.GenkiDamaHard;
-import poderes.GenkiDamaMedium;
-import poderes.KaiokenEasy;
-import poderes.KaiokenHard;
-import poderes.KaiokenMedium;
-import poderes.KamehamehaMedium;
+import poderes.GenkiDama;
+import poderes.Kaioken;
+import poderes.Kamehameha;
+import shields.Shield;
 import shields.TShields;
 
 /**
@@ -91,11 +88,15 @@ public class Main {
         System.out.println(enemy.getAtaque().getAtaques() + " " + enemy.getAtaque().getDanoDeAtaque());
 
         Jogador j1 = new Jogador1();
-        j1.setShield(new TShields("Wind_shield"));
-        j1.getShield().setNext(new TShields("Fire_shield"));
+        Shield s1 = new TShields("Fire_shield");
+        Shield s2 = new TShields("Wind_shield");
+        j1.setShield(s1);
+        j1.getShield().setNext(s2);
         System.out.println(j1.getShield().getTypeShield());
         enemy.confrontar(j1);
         j1.getShield().checkShield(enemy.getAtaque().getAtaques());
+        //System.out.println(j1.getShield().getAllTypeShield());
+        //System.out.println(j1.getShield().getTypeShield());
 
     }
 

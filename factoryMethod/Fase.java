@@ -5,6 +5,7 @@
  */
 package factoryMethod;
 
+import AbstractFactory.Nivel;
 import java.util.ArrayList;
 import praticas.Jogador;
 
@@ -14,18 +15,18 @@ import praticas.Jogador;
  */
 public abstract class Fase {
 
-    protected abstract ArrayList<Elemento> factoryMethod();
+    protected abstract ArrayList<Elemento> factoryMethod(Nivel n);
 
     public void jogar(Jogador jogador) {
         System.out.println("Vida inicial: " + jogador.getVida());
-        ArrayList<Elemento> faseN = factoryMethod();
-        for (Elemento x : faseN) {
-            x.confrontar(jogador);
-            if (jogador.getVida() <= 0) {
-                System.out.println("Você morreu!!!");
-                return;
-            }
-        }
+//        ArrayList<Elemento> faseN = factoryMethod();
+//        for (Elemento x : faseN) {
+//            x.confrontar(jogador);
+//            if (jogador.getVida() <= 0) {
+//                System.out.println("Você morreu!!!");
+//                return;
+//            }
+//        }
         System.out.println("Você Passou de fase!!");
         System.out.println("Vida Final: " + jogador.getVida());
     }

@@ -11,42 +11,42 @@ import factoryMethod.Obstaculo;
 import Inimigos.Inimigo;
 import decorator.Atacar;
 import obstaculos.BuracoHard;
-import poderes.GenkiDamaHard;
-import singletonSimpleFactory.NivelFactory;
+import singletonSimpleFactory.EnemyFactory;
+import singletonSimpleFactory.HurdleFactory;
+import singletonSimpleFactory.SkillFactory;
 
 /**
  *
  * @author Nicolas
  */
 public class Hard extends Nivel {
-    
-    
+
     private static Hard instancia = null;
-    
-    private Hard()
-    {
-        
+
+    private Hard() {
+
     }
+
     public static synchronized Nivel getInstancia() {
         if (instancia == null) {
-            instancia =new Hard();
+            instancia = new Hard();
         }
         return instancia;
     }
 
     @Override
     public Inimigo CreateEnemy() {
-        return  NivelFactory.createInimigo(3) ;
+        return EnemyFactory.createInimigoHard();
     }
 
     @Override
     public DecoradorAtaque CreateSkill(Atacar ataque) {
-        return new GenkiDamaHard(ataque);
+        return SkillFactory.createSkillHard(ataque);
     }
 
     @Override
     public Obstaculo CreateHurdle() {
-        return new BuracoHard();
+        return HurdleFactory.createHurdleHard();
     }
 
 }
