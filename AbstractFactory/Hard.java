@@ -19,7 +19,7 @@ import singletonSimpleFactory.SkillFactory;
  *
  * @author Nicolas
  */
-public class Hard extends Nivel {
+public class Hard extends Nivel {//ConcreteFactory
 
     private static Hard instancia = null;
 

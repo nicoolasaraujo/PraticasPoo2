@@ -11,6 +11,16 @@ import AbstractFactory.Nivel;
 import Inimigos.Inimigo;
 import Inimigos.Inimigo1;
 import Inimigos.Inimigo1Easy;
+import command.Ataques;
+import composite.Abismo;
+import composite.F1Sala1;
+import composite.*;
+import composite.Abismo;
+import composite.F1Sala1;
+import composite.F1Sala2t;
+import composite.Labirinto;
+import composite.Saida;
+import composite.Saida;
 import decorator.Fire_Attack;
 import decorator.Wind_Attack;
 import singletonSimpleFactory.SimplePersonFactory;
@@ -82,22 +92,52 @@ public class Main {
 //        j1.getShield().setNext(new TShields("Second_shield"));
 //        System.out.println(j1.getShield().getTypeShield());
 //        j1.getShield().checkShield("Second_Attack");
-        Inimigo enemy = new Inimigo1Easy();
-        System.out.println(enemy.getAtaque().getAtaques() + " " + enemy.getAtaque().getDanoDeAtaque());
-        enemy.setAtaque(new Fire_Attack(enemy.getAtaque()));
-        System.out.println(enemy.getAtaque().getAtaques() + " " + enemy.getAtaque().getDanoDeAtaque());
-
-        Jogador j1 = new Jogador1();
-        Shield s1 = new TShields("Fire_shield");
-        Shield s2 = new TShields("Wind_shield");
-        j1.setShield(s1);
-        j1.getShield().setNext(s2);
-        System.out.println(j1.getShield().getTypeShield());
-        enemy.confrontar(j1);
-        j1.getShield().checkShield(enemy.getAtaque().getAtaques());
+//        Inimigo enemy = new Inimigo1Easy();
+//        System.out.println(enemy.getAtaque().getAtaques() + " " + enemy.getAtaque().getDanoDeAtaque());
+//        enemy.setAtaque(new Fire_Attack(enemy.getAtaque()));
+//        System.out.println(enemy.getAtaque().getAtaques() + " " + enemy.getAtaque().getDanoDeAtaque());
+//
+//        Jogador j1 = new Jogador1();
+//        Shield s1 = new TShields("Fire_shield");
+//        Shield s2 = new TShields("Wind_shield");
+//        j1.setShield(s1);
+//        j1.getShield().setNext(s2);
+//        System.out.println(j1.getShield().getTypeShield());
+//        enemy.confrontar(j1);
+//        j1.getShield().checkShield(enemy.getAtaque().getAtaques());
         //System.out.println(j1.getShield().getAllTypeShield());
         //System.out.println(j1.getShield().getTypeShield());
+//        Jogador j = new Jogador1();
+//        System.out.println(j.getClass());
+//        j.alterLife(50);
+//        System.out.println(j.getState().getClass());
+//        System.out.println(j.getA().getClass());
+//        System.out.println(j.getC().getClass());
+//        j.alterLife(10);
+//
+//        System.out.println(j.getState().getClass());
+//        System.out.println(j.getA().getClass());
+//        System.out.println(j.getC().getClass());
+//
+//        j.alterLife(80);
+//
+//        System.out.println(j.getState().getClass());
+//        System.out.println(j.getA().getClass());
+//        System.out.println(j.getC().getClass());
+//
+//        j.alterLife(0);
+//        System.out.println(j.getState().getClass());
+        Nivel n = Easy.getInstancia();
+        Jogador j1 = new Jogador1();
+        Shield s = new TShields("Fire_Attack");
+        Labirinto saida = new Saida();
+        Labirinto abismo = new Abismo();
 
+//        Labirinto lab = new F1Sala1(new Saida(), new F1Sala2t(new Abismo(), new F1Sala1(new F1Sala2t(new Abismo(), new Saida()), new Saida())));
+        Labirinto lab = new F1Sala1(saida, abismo, j1, n);
+        Labirinto lab2 = new F1Sala2t(saida, lab, j1, n);
+        Labirinto lab3 = new F1Sala2t(saida, lab2, j1, n);
+        lab.action();
     }
 
 }

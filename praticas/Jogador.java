@@ -8,6 +8,8 @@ package praticas;
 import decorator.Atacar;
 import java.util.Observable;
 import shields.Shield;
+import statePattern.NormalState;
+import statePattern.State;
 
 /**
  *
@@ -21,9 +23,22 @@ public class Jogador extends Observable {
     private Atacar a;
     private int vida;
     private Shield shield;
+    private int pos_x, pos_y;
+    private State state;
+
+    public State getState() {
+        return state;
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
 
     public Jogador() {
-        setVida(100);
+//        setVida(100);
+        setVida(70);
+        setState(new NormalState(this));
+
     }
 
     public Shield getShield() {
@@ -66,16 +81,6 @@ public class Jogador extends Observable {
         this.a = a;
     }
 
-    private int pos_x, pos_y;
-
-    public void mover(int x, int y) {
-        setPos_x(x);
-        setPos_y(y);
-        setChanged();
-        notifyObservers();
-
-    }
-
     public int getPos_x() {
         return pos_x;
     }
@@ -100,4 +105,15 @@ public class Jogador extends Observable {
         this.vida = vida;
     }
 
+    public void alterLife(int life) {
+        this.getState().setLife(life);
+    }
+
+    public void mover(int x, int y) {
+        setPos_x(x);
+        setPos_y(y);
+        setChanged();
+        notifyObservers();
+
+    }
 }

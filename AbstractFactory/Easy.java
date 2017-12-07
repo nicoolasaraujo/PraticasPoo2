@@ -27,7 +27,7 @@ public class Easy extends Nivel {
 
     }
 
-    public static synchronized Nivel getInstancia() {
+    public static synchronized Nivel getInstancia() {//ConcreteFactory
         if (instancia == null) {
             instancia = new Easy();
         }

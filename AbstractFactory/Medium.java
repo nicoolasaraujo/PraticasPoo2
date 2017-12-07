@@ -20,7 +20,7 @@ import singletonSimpleFactory.SkillFactory;
  *
  * @author Nicolas
  */
-public class Medium extends Nivel {
+public class Medium extends Nivel {//ConcreteFactory
 
     private static Medium instancia = null;
 

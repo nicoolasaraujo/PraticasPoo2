@@ -5,13 +5,12 @@ import factoryMethod.Obstaculo;
 import Inimigos.Inimigo;
 import decorator.Atacar;
 
-public abstract class Nivel {
+public abstract class Nivel {//Abstract Factory
 
+    public abstract Inimigo CreateEnemy();//Product
 
-    public abstract Inimigo CreateEnemy();
+    public abstract DecoradorAtaque CreateSkill(Atacar ataque);//Product
 
-    public abstract DecoradorAtaque CreateSkill(Atacar ataque);
-
-    public abstract Obstaculo CreateHurdle();
+    public abstract Obstaculo CreateHurdle();//Product
 
 }

@@ -15,9 +15,9 @@ import decorator.Atacar;
 public class Jogador1 extends Jogador {
 
     public Jogador1() {
-        setA(new AtacarForte());
-        setC(new CorrerMedio());
-        setP(new PuloMedio());
+//        setA(new AtacarForte());
+//        setC(new CorrerMedio());
+//        se    tP(new PuloMedio());
 
     }
 

@@ -5,8 +5,10 @@
  */
 package Inimigos;
 
+import command.Buffer;
 import decorator.Atacar;
 import factoryMethod.Elemento;
+import java.util.ArrayList;
 import java.util.Observer;
 import java.util.Observable;
 import praticas.Jogador;
@@ -15,7 +17,7 @@ import praticas.Jogador;
  *
  * @author a
  */
-public abstract class Inimigo implements Observer, Elemento {
+public abstract class Inimigo implements Observer, Elemento {//AbstractProduct
 
     @Override
     public void update(Observable o, Object arg) {
@@ -29,6 +31,16 @@ public abstract class Inimigo implements Observer, Elemento {
     public abstract void confrontar(Jogador jogador);
 
     private Atacar ataque;
+
+    private int vida;
+
+    public int getVida() {
+        return vida;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
 
     public Atacar getAtaque() {
         return ataque;
